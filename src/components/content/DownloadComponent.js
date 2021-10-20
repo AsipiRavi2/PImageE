@@ -16,7 +16,7 @@ export default function DownloadComponent() {
     }
     
     function downloadImg(){
-        html2canvas(document.getElementById("canvas"),{scale:2}).then(function(canvas) {
+        html2canvas(document.getElementById("canvas"),{scale:1}).then(function(canvas) {
             var link = document.createElement('a');
             link.href = canvas.toDataURL();
             link.download = "download.png";
@@ -40,30 +40,25 @@ export default function DownloadComponent() {
 
 const styles ={
     download:{
-        position:'absolute',
-        top:5,
-        right:10,
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'end',
         flexDirection: 'column',
         flexWrap: 'wrap',
-        margin: '0 1rem 1rem 1rem',
-        // border:'1px solid gray',
-        // fontSize: '1rem',
-        // boxShadow: '2px 2px 2px 2px rgba(0, 0, 0, .4)',
-        maxWidth:170,
-        minHeight:100
+        margin: '1rem 1rem 1rem 1rem',
+        minWidth:170,
+        minHeight:100,
+
     },
     btn:{
         minWidth:150,
         margin:'.2rem',
-        padding:'.5rem',
+        padding:'.2rem .5rem .2rem .5rem',
         border:'none',
-        borderRadius:'1rem',
+        borderRadius:'.2rem',
         // backgroundColor:'#21212',
-        color:'white',
+        color:'gray',
         fontSize:'1rem',
         boxShadow: '1px 1px 1px 1px rgba(0, 0, 0, .7)',
-        backgroundImage: 'linear-gradient(to bottom left, #48A192,#066152)'
+        // backgroundImage: 'linear-gradient(to bottom left, #48A192,#066152)'
     },
 }

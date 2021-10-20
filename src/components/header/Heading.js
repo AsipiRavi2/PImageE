@@ -12,6 +12,6 @@ const styles={
     Title:{
         color:'gray',
         fontSize: '2rem',
-        margin: '.5rem'
+        margin: '.5rem',
     }
 }

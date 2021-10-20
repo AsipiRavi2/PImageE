@@ -41,9 +41,15 @@
   position:absolute;
   z-index:0;
   object-fit:cover;
-  border:2px solid black;
-  /* width:200px;
-  top:10px;
-  right:10px; */
-  box-shadow: '2px 2px 2px 1px rgba(0, 0, 0, 1)',
+  /* border:2px solid black; */
+  box-shadow: 4px 4px 2px black;
+}
+
+.text{
+  position:absolute;
+  z-index:0;
+  object-fit:cover;
+  overflow: hidden;
+  /* border:2px solid black; */
+  /* box-shadow: 4px 4px 2px black; */
 }

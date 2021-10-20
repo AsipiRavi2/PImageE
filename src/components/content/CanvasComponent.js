@@ -8,18 +8,19 @@ export default function CanvasComponent() {
 
     const backgroundImage = useSelector(state => state.background.url)
     const stickersList = useSelector(state => state.stickers.stickersList)
+    const textsList = useSelector(state => state.texts.textsList)
     // const dispatch = useDispatch()
 
-    function dragElement(stickerId) {
-        var stickerDiv = document.getElementById(stickerId);
-        console.log(stickerId,stickerDiv)
+    function dragElement(elementId) {
+        var elementDiv = document.getElementById(elementId);
+        console.log(elementId,elementDiv)
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        if (stickerDiv) {
+        if (elementDiv) {
           /* if present, the header is where you move the DIV from:*/
-          stickerDiv.onmousedown = dragMouseDown;
+          elementDiv.onmousedown = dragMouseDown;
         } else {
           /* otherwise, move the DIV from anywhere inside the DIV:*/
-          stickerDiv.onmousedown = dragMouseDown;
+          elementDiv.onmousedown = dragMouseDown;
         }
 
         function dragMouseDown(e) {
@@ -43,8 +44,9 @@ export default function CanvasComponent() {
             pos4 = e.clientY;
             // set the element's new position:
 
-            stickerDiv.style.top = (stickerDiv.offsetTop - pos2) + "px";
-            stickerDiv.style.left = (stickerDiv.offsetLeft - pos1) + "px";
+            elementDiv.style.top = (elementDiv.offsetTop - pos2) + "px";
+            elementDiv.style.left = (elementDiv.offsetLeft - pos1) + "px";
+
             
             //console.log(stickerDiv.offsetTop,stickerDiv.offsetLeft,stickerDiv.offsetRight,stickerDiv.offsetBottom)
             // console.log(document.getElementById('canvas').offsetTop,document.getElementById('canvas').offsetLeft)
@@ -88,10 +90,31 @@ export default function CanvasComponent() {
                         key={"sticker".concat(i)} 
                         src={sticker.url} 
                         alt={"sticker".concat(i)} 
-                        style={{width:sticker.width+'%', height:sticker.height+'%', borderRadius:sticker.radius+'%', opacity:sticker.opacity, top:(i+1)*10+'px', right:(i+1)*10+'px', transform:'rotate('+sticker.rotation+'deg)'}} 
+                        style={{width:sticker.width+'%',  borderRadius:sticker.radius+'%', opacity:sticker.opacity, top:(i+1)*10+'px', right:(i+1)*10+'px', transform:'rotate('+sticker.rotation+'deg)'}} 
                         id={"sticker_div_id_".concat(i)} 
                         onMouseOver={()=>dragElement("sticker_div_id_".concat(i))}
+                        onTouchMove={()=>dragElement("sticker_div_id_".concat(i))}
                     />
+                ) 
+                }
+            </div>
+
+            <div>
+                { textsList
+                &&
+                textsList.map((text,i)=>
+                    <div 
+                        className="text"
+                        key={"text".concat(i)}
+                        style={{width:text.width+'%', fontWeight:text.weight, color:text.color, fontSize:text.size+'rem', opacity:text.opacity, top:(i+1)*10+'px', right:(i+1)*10+'px', transform:'rotate('+text.rotation+'deg)'}} 
+                        id={"text_div_id_".concat(i)} 
+                        onMouseOver={()=>dragElement("text_div_id_".concat(i))}
+                        onTouchMove={()=>dragElement("text_div_id_".concat(i))}
+                    
+                    >
+                        {text.info}
+                    </div>
+
                 ) 
                 }
             </div>
@@ -104,11 +127,11 @@ export default function CanvasComponent() {
 const styles ={
     canvas:{
         position:'relative',
-        // margin:	0,
-        // padding: '1rem',
         maxWidth:'1000px',
         minWidth:'300px',
         overflow:'hidden',
+        height:'100%',
+        border:'1px solid black'
     },
     background:{
         position:'relative',

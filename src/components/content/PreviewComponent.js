@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { previewImage } from '../../features/preview/previewSlice';
 
-export default function PreviewComponent( props ) {
+export default function PreviewComponent( ) {
     const preview = useSelector(state => state.preview.display) === 'none' ? 'none' : 'flex'  ;
     const dispatch = useDispatch() ;
 

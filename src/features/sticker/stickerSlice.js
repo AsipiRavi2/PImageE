@@ -14,9 +14,10 @@ const stickerSlice = createSlice({
         changeDimensions:(state, action)=>{
             state.stickersList[action.payload.index][action.payload.name] = action.payload.value
         },
+
         deleteSticker:(state, action)=>{
             state.stickersList.splice(action.payload.index,1)
-        }
+        },
     }
 });
 
