@@ -329,9 +329,10 @@ const styles ={
         position: 'absolute',
         bottom: 0,
         right:0,
-        color:'#fff',
+        color:'cyan',
         backgroundColor:'black',
-        opacity:.8
+        opacity:.8,
+        cursor:'pointer'
     },
     stickers_div:{
         display:'flex',
@@ -341,6 +342,7 @@ const styles ={
         flexWrap: 'wrap',
         margin:'.1rem',
         padding:'.1rem',
+        
         // width:150,
         // hieght:150,
         // border:'1px solid black'
@@ -349,6 +351,7 @@ const styles ={
         // position:'relative',
         width:52,
         height:52,
+        cursor:'pointer'
     },
     sticker:{
         width:50,
@@ -371,17 +374,19 @@ const styles ={
         margin:'.2rem',
         border:'1px dashed black',
         backgroundColor:'transparent',
-        // color:'#fff',
+        // color:'cyan',
         fontSize:'.8rem',
         display:'flex',
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'center',
+        cursor:'pointer'
     },
 
     text_div:{
         // position:'relative',
         width:52,
         height:52,
+        cursor:'pointer'
     },
     text:{
         display:'flex',
@@ -409,6 +414,7 @@ const styles ={
     },
     input:{
         maxWidth:90,
+        cursor:'pointer',
     },
     add_background:{
         minWidth:150,
@@ -420,7 +426,8 @@ const styles ={
         // color:'#fff',
         fontSize:'1rem',
         display:'flex',
-        alignItems:'center'
+        alignItems:'center',
+        cursor:'pointer'
     },
     btn:{
         minWidth:150,
@@ -429,10 +436,11 @@ const styles ={
         border:'none',
         borderRadius:'.2rem',
         // backgroundColor:'#21212',
-        color:'gray',
+        color:'cyan',
         // fontSize:'1rem',
         boxShadow: '1px 1px 1px 1px rgba(0, 0, 0, .7)',
-        // backgroundImage: 'linear-gradient(to bottom left, #48A192,#066152)'
+        cursor:'pointer',
+        backgroundImage: 'linear-gradient(to bottom left, #48A192,#066152)'
     },
 
 

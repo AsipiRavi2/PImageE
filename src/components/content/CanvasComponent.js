@@ -143,7 +143,7 @@ const styles ={
         minWidth:'300px',
         overflow:'hidden',
         height:'100%',
-        border:'1px solid black'
+        // border:'1px solid black'
     },
     background:{
         position:'relative',
@@ -151,6 +151,7 @@ const styles ={
         left:0,
         zIndex:0,
         width:'100%',
+        // height:'inherit',
         objectFit:'cover',
     },
 }

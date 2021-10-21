@@ -55,10 +55,11 @@ const styles ={
         padding:'.2rem .5rem .2rem .5rem',
         border:'none',
         borderRadius:'.2rem',
-        // backgroundColor:'#21212',
-        color:'gray',
+        // backgroundColor:'white',
+        color:'cyan',
         fontSize:'1rem',
-        boxShadow: '1px 1px 1px 1px rgba(0, 0, 0, .7)',
-        // backgroundImage: 'linear-gradient(to bottom left, #48A192,#066152)'
+        boxShadow: '1px 1px 1px 1px rgba(0, 0, 0, .5)',
+        backgroundImage: 'linear-gradient(to bottom left, #066152, #48A192)',
+        cursor:'pointer'
     },
 }
