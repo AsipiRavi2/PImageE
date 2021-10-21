@@ -25,8 +25,8 @@ const styles ={
         flexDirection: 'row',
         flexWrap: 'wrap',
         minHeight:'200px',
-        margin: '1rem',
-        padding: '1rem',
+        margin: '.5rem',
+        padding: '.5rem',
         // border:'1px solid gray',
         fontSize: '1rem',
         // backgroundImage: 'linear-gradient(to bottom left, #48A192,#066152)'

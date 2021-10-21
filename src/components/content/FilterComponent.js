@@ -42,6 +42,7 @@ export default function FilterComponent() {
     //functions related to sticker
 
     function chooseStickerFile(){
+        document.getElementById("sticker_file").value=""
         document.getElementById("sticker_file").click()
     }
 
@@ -54,6 +55,8 @@ export default function FilterComponent() {
                     url:URL.createObjectURL(event.target.files[0]),
                     width:20,
                     // height:20,
+                    top: (stickersListLength+1)*10,
+                    left: (stickersListLength+1)*10,
                     radius: 0,
                     opacity: 1,
                     rotation: 0,
@@ -108,6 +111,8 @@ export default function FilterComponent() {
             color:'black',
             size:'1',
             width:10,
+            top: (stickersListLength+textsListLength+1)*10,
+            left: (stickersListLength+textsListLength+1)*10,
             weight:700,
             opacity: 1,
             rotation: 0,
